@@ -49,7 +49,13 @@ class Course:
         else:
             print("Student is already enrolled in this course")
         
+    def course_info(self):
+        print(f"Course information: Name: {self.courseNeme}, Code: {self.courseCode}, InstructorName: {self.instructor}")
+        print('Enroll Student:',",".join([self.student_enroll]) if self.student_enroll else "none")
+
     
+#Section B (system menagement)
+
 
 
 
