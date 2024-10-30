@@ -1,0 +1,1 @@
+{"students": {"a001": {"name": "Masricozzaman Anas", "age": 22, "address": "Brahmanbaria", "student_id": "a001", "grades": {"Web Developement": "A+"}, "courses": ["Web Developement"]}}, "courses": {"01": {"course_name": "Web Developement", "course_code": "01", "instructor": "Rabbil hasan", "students": ["a001"]}}}
