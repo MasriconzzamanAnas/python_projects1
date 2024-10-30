@@ -146,3 +146,11 @@ Input:
 Select Option: 0
 Output:
 Exiting Student Management System. Goodbye!
+
+
+
+with open(data, 'w') as outfile:
+            json.dump({
+                'Students': {student_id: vars(student) for student_id, student in self.students.items()},
+                'Courses': {courseCode: vars(course) for courseCode, course in self.course.items()}
+            }, outfile, indent=4)
