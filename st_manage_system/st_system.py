@@ -70,6 +70,7 @@ class StudentManagementSystem:
             print(f"Course {course_name} (Code: {course_code}) created with instructor {instructor}.")
 
     def enroll_student_in_course(self, student_id, course_code):
+        # check if student and course exists in the system before enrolling them in the course.
         student = self.students.get(student_id)
         course = self.courses.get(course_code)
         if student and course:
