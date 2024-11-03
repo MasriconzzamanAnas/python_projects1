@@ -111,7 +111,7 @@ class StudentManagementSystem:
                              "students": [s.student_id for s in c.students]} for cc, c in self.courses.items()}
         }
         with open(filename, "w") as file:
-            json.dump(data, file)
+            json.dump(data, file, indent=4)
         print("All student and course data saved successfully.")
 
     def load_data(self, filename="data.json"):
