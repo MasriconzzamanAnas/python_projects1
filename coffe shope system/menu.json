@@ -1,0 +1,26 @@
+{
+    "Coffee": {
+        "type": "Hot",
+        "price": 2.5
+    },
+    "Tea": {
+        "type": "Cool",
+        "price": 2
+    },
+    "Pizza": {
+        "type": "Hot",
+        "price": 3
+    },
+    "Pasta": {
+        "type": "Hot",
+        "price": 3
+    },
+    "Burger": {
+        "type": "Hot",
+        "price": 3
+    },
+    "Sandwich": {
+        "type": "Hot",
+        "price": 3
+    }
+}
