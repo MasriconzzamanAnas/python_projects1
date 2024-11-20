@@ -7,7 +7,7 @@ class Book:
         self.description = description
         self.serial_number = s_number
 
-    def display_details(self):
+    def display_book_details(self):
         return print(f"Book Name: {self.title}, Book Author: {self.author}, Book Details: {self.description}, Book Serial Number: {self.serial_number}")
 
 
@@ -21,7 +21,7 @@ class Member:
         self.borrowed_books[book.serial_number] = book
         print(f"Book '{book.title}' added to {self.name}'s borrowed books.")
 
-    def display_details(self):
+    def display_member_details(self):
         books = ', '.join(book.title for book in self.borrowed_books.values())
         print(f"Member Name: {self.name}, User ID: {self.member_id}, Borrowed Books: {books if books else 'None'}")
 
@@ -64,13 +64,13 @@ class LibraryManagementSystem:
         book.ability = False
         print(f"Book '{book.title}' borrowed successfully by {member.name}.")
 
-    def display_books(self):
+    def list_available_books(self):
         for book in self.books.values():
-            book.display_details()
+            book.display_book_details()
 
     def display_members(self):
         for member in self.members.values():
-            member.display_details()
+            member.display_member_details()
 
     def return_book(self, member, book):
         pass
@@ -85,18 +85,16 @@ class LibraryManagementSystem:
         pass
 
 
-def display_menu():
-    pass
 
 
 def main():
     library = LibraryManagementSystem()
 
     # Adding some initial books and members
-    library.add_book("1984", "George Orwell")
-    library.add_book("To Kill a Mockingbird", "Harper Lee")
-    library.add_member("Alice")
-    library.add_member("Bob")
+    library.add_book("To Kill a Mockingbird","Harper Lee", "George Orwell","1984")
+    library.add_book("Ritch Dad Poor Dad", "Albard Jonson", "About","1990" )
+    library.add_member("Alice", "A2006")
+    library.add_member("Bob","B2006")
 
     while True:
         print("\nLibrary Management System")
@@ -112,7 +110,9 @@ def main():
         if choice == '1':
             title = input("Enter the book title: ")
             author = input("Enter the book author: ")
-            library.add_book(title, author)
+            description = input("Enter the book description: ")
+            s_number = input("Enter the book serial number: ")
+            library.add_book(title, author,description, s_number)
 
         elif choice == '2':
             name = input("Enter member name: ")
