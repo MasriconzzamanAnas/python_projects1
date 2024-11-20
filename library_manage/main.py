@@ -26,7 +26,7 @@ class Member:
         print(f"Member Name: {self.name}, User ID: {self.member_id}, Borrowed Books: {books if books else 'None'}")
 
 
-class Main:
+class LibraryManagementSystem:
     def __init__(self):
         self.books = {}
         self.members = {}
@@ -85,3 +85,65 @@ class Main:
         pass
 
 
+def display_menu():
+    pass
+
+
+def main():
+    library = LibraryManagementSystem()
+
+    # Adding some initial books and members
+    library.add_book("1984", "George Orwell")
+    library.add_book("To Kill a Mockingbird", "Harper Lee")
+    library.add_member("Alice")
+    library.add_member("Bob")
+
+    while True:
+        print("\nLibrary Management System")
+        print("1. Add Book")
+        print("2. Add Member")
+        print("3. View Available Books")
+        print("4. Borrow Book")
+        print("5. Return Book")
+        print("6. View Borrowed Books")
+        print("7. Exit")
+        choice = input("Enter your choice: ")
+
+        if choice == '1':
+            title = input("Enter the book title: ")
+            author = input("Enter the book author: ")
+            library.add_book(title, author)
+
+        elif choice == '2':
+            name = input("Enter member name: ")
+            library.add_member(name)
+
+        elif choice == '3':
+            library.list_available_books()
+
+        elif choice == '4':
+            member_name = input("Enter member name: ")
+            book_title = input("Enter book title to borrow: ")
+            library.lend_book(member_name, book_title)
+
+        elif choice == '5':
+            member_name = input("Enter member name: ")
+            book_title = input("Enter book title to return: ")
+            library.return_book(member_name, book_title)
+
+        elif choice == '6':
+            member_name = input("Enter member name: ")
+            member = library._find_member(member_name)
+            if member:
+                member.list_borrowed_books()
+
+        elif choice == '7':
+            print("Exiting the system. Goodbye!")
+            break
+
+        else:
+            print("Invalid choice. Please try again.")
+
+
+if __name__ == "__main__":
+    main()
