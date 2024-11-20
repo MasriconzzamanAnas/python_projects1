@@ -104,7 +104,8 @@ def main():
         print("4. Borrow Book")
         print("5. Return Book")
         print("6. View Borrowed Books")
-        print("7. Exit")
+        print("7. Display All Member")
+        print("8. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -138,6 +139,9 @@ def main():
                 member.list_borrowed_books()
 
         elif choice == '7':
+            library.display_members()
+            
+        elif choice == '8':
             print("Exiting the system. Goodbye!")
             break
 
