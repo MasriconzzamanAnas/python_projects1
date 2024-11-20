@@ -1,0 +1,33 @@
+Design a Python program for a simple Library Management System with the following features:
+
+1.Classes to implement:
+Book: Represents a book with attributes like title, author, and availability.
+Member: Represents a library member with attributes like name and borrowed_books.
+Library: Manages books and members with methods for:
+    Adding books to the library.
+    Lending books to members.
+    Returning borrowed books.
+    Functionalities to implement:
+
+2.Add new books to the library.
+    Check the availability of a book before lending it.
+    Allow a member to borrow multiple books (up to a specific limit).
+    Allow members to return books.
+    Display the list of available books in the library.
+
+3.Error handling:
+    Handle cases where a book is unavailable for borrowing.
+    Prevent members from borrowing more than their allowed limit.
+    Handle cases where a member tries to return a book they haven't borrowed.
+
+4.Program flow:
+    Provide a menu-driven interface for the user (admin or library member).
+    Allow the user to perform actions like adding books, borrowing books, returning books, and viewing available books.
+    
+
+5.Use OOP principles:
+    Encapsulation (use private/protected attributes for classes).
+    Class methods and attributes to manage library functionality.
+
+6.Optional: Add data persistence using file handling or a database to save and retrieve library data.
+
