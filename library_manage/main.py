@@ -13,7 +13,7 @@ class Book:
     def return_book(self):
         self.ability = True
 
-class Member(Book):
+class Member():
     def __init__(self, name, member_id, mex_book=0):
         self.name = name
         self.member_id = member_id
@@ -22,7 +22,7 @@ class Member(Book):
 
     def add_borrowed_book(self, book):
         self.borrowed_books[book.serial_number] = book
-        print(f"Book '{book.title}' added to {self.name}'s borrowed books.")
+        print(f"Book '{book.title}' added to {self.name}' borrowed books.")
 
     def return_book(self, book):
         if book in self.borrowed_books:
@@ -30,7 +30,7 @@ class Member(Book):
             self.borrowed_books.remove(book.serial_number)
             print(f"{self.name} returned '{book.title}'")
         else:
-            print(f"Error: You have not borrowed '{book.title}'.")
+            print(f"You have not borrowed {book.title}.")
 
     def display_member_details(self):
         books = ', '.join(book.title for book in self.borrowed_books.values())
@@ -110,9 +110,8 @@ def main():
         print("3. View Available Books")
         print("4. Borrow Book")
         print("5. Return Book")
-        print("6. View Borrowed Books")
-        print("7. Display All Member")
-        print("8. Exit")
+        print("6. Display All Member")
+        print("7. Exit")
         choice = input("Enter your choice: ")
 
         if choice == '1':
@@ -124,31 +123,26 @@ def main():
 
         elif choice == '2':
             name = input("Enter member name: ")
-            library.add_member(name)
+            member_id = input("Enter member ID: ")
+            library.add_member(name, member_id)
 
         elif choice == '3':
             library.list_available_books()
 
         elif choice == '4':
-            member_name = input("Enter member name: ")
-            book_title = input("Enter book title to borrow: ")
-            library.lend_book(member_name, book_title)
+            member_id = input("Enter member ID: ")
+            s_number = input("Enter book serial number: ")
+            library.borrow_book(member_id, s_number)
 
         elif choice == '5':
-            member_name = input("Enter member name: ")
-            book_title = input("Enter book title to return: ")
-            library.return_book(member_name, book_title)
+            member_id = input("Enter member ID: ")
+            s_number = input("Enter book serial number: ")
+            library.return_book(member_id, s_number)
 
         elif choice == '6':
-            member_name = input("Enter member name: ")
-            member = library._find_member(member_name)
-            if member:
-                member.list_borrowed_books()
-
-        elif choice == '7':
             library.display_members()
 
-        elif choice == '8':
+        elif choice == '7':
             print("Exiting the system. Goodbye!")
             break
 
