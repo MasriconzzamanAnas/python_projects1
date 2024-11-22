@@ -10,16 +10,27 @@ class Book:
     def display_book_details(self):
         return print(f"Book Name: {self.title}, Book Author: {self.author}, Book Details: {self.description}, Book Serial Number: {self.serial_number}")
 
+    def return_book(self):
+        self.ability = True
 
-class Member:
-    def __init__(self, name, member_id):
+class Member(Book):
+    def __init__(self, name, member_id, mex_book=0):
         self.name = name
         self.member_id = member_id
         self.borrowed_books = {}
+        self.mex_book = mex_book
 
     def add_borrowed_book(self, book):
         self.borrowed_books[book.serial_number] = book
         print(f"Book '{book.title}' added to {self.name}'s borrowed books.")
+
+    def return_book(self, book):
+        if book in self.borrowed_books:
+            book.return_book()
+            self.borrowed_books.remove(book.serial_number)
+            print(f"{self.name} returned '{book.title}'")
+        else:
+            print(f"Error: You have not borrowed '{book.title}'.")
 
     def display_member_details(self):
         books = ', '.join(book.title for book in self.borrowed_books.values())
@@ -72,17 +83,13 @@ class LibraryManagementSystem:
         for member in self.members.values():
             member.display_member_details()
 
-    def return_book(self, member, book):
-        pass
-
-    def display_all_books(self):
-        pass
-
-    def search_book(self, serial_number):
-        pass
-
-    def remove_book(self, serial_number):
-        pass
+    def return_book(self, member_id, s_number):
+        member = self.members.get(member_id)
+        book = self.books.get(s_number)
+        if member and book:
+            member.return_book(book)
+        else:
+            print("Invalid member ID or book serial number.")
 
 
 
@@ -140,7 +147,7 @@ def main():
 
         elif choice == '7':
             library.display_members()
-            
+
         elif choice == '8':
             print("Exiting the system. Goodbye!")
             break
