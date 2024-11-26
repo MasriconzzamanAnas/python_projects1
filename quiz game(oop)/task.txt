@@ -1,0 +1,28 @@
+
+Here’s the content from your uploaded image rewritten as a Python programming task:
+
+The Quiz Game
+A simple True/False game based on a series of questions. Follow these steps:
+
+1.Create a Random Question Model:
+    Define a class Question with the following attributes:
+        text: The question text.
+        answer: The correct answer (True/False).
+
+2.Create a Question Bank:
+    Create a list of Question objects, where each object represents a question with its answer.
+
+3.Game Logic:
+    Develop the following:
+        Pull up one question at a time and let the user answer it.
+        Check if the answer is correct and update the score.
+        Check if the quiz has reached the end.
+    Use the question_list attribute (a list of Question objects) and a question_number attribute to track progress through the quiz.
+
+4.Create a Method in QuizBrain:
+    Write a method to:
+        Return a boolean indicating whether there are more questions to ask.
+
+5.Add a Method to Check the Answer:
+    Include a method to verify if the user’s answer is correct.
+    Keep track of the score in the QuizBrain class.
