@@ -1,7 +1,6 @@
 question_bank = [
-    {"text":"Python is a statically-typed programming language.", "answer": "False"},
-    {"text":"The Earth is the third planet from the Sun." "True"},
-    {"text":"HTML stands for Hyper Text Markup Language." "True"},
+    {"text":"Python is a statically-typed programming language.","answer": "False"},
+    {"text":"The Earth is the third planet from the Sun.","answer": "True"},        
     {"text":"The boiling point of water is 50 degrees Celsius.", "answer": "False"},
     {"text":"The keyword 'class' is used to define a class in Python.", "answer": "True"},
     {"text":"React.js is a backend framework for building servers.,", "answer": "False"},
@@ -16,7 +15,7 @@ question_bank = [
     {"text":"CSS stands for Cascading Style Sheets.", "answer": "True"},
     {"text":"The Eiffel Tower is located in London.", "answer": "False"},
     {"text":"MySQL is a relational database management system.", "answer": "True"},
-    {"text":"Electricity is measured in units of amperes.", "answer": "False"},  # It's measured in volts.
+    {"text":"Electricity is measured in units of amperes.", "answer": "False"},  
     {"text":"Linux is an open-source operating system.", "answer": "True"},
     {"text":"In object-oriented programming, inheritance allows a class to inherit properties and methods from another class.", "answer": "True"}
 ]
